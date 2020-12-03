@@ -1,3 +1,5 @@
+package Playground;
+
 import Playground.interfaces.FirstInterface;
 import Playground.interfaces.FunctionalGeneric;
 
@@ -51,7 +53,7 @@ public class Application {
 
         // Consumer : consumer takes and argument and returns nothing
 
-        Consumer<Integer> consumer = e -> System.out.println(e);
+        Consumer<Integer> consumer = System.out::println;
         for(Integer i : numbers)
             consumer.accept(i);
 
@@ -63,7 +65,7 @@ public class Application {
             System.out.println(randomGenerator.get());
 
         // Function : Important as it basically means transformation i.e. it takes something in arg and does some processing and then returns results
-        Function<String, String> toUpperCase = s -> s.toUpperCase();
+        Function<String, String> toUpperCase = String::toUpperCase;
         Function<String, Integer> countVowels = s -> {
             s = s.toLowerCase();
             int ans = 0;
